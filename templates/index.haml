@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %meta{ :charset => "utf-8" }
+    %title Show me Lyrics ... now!
+    %link{:rel => "stylesheet", :href => "css/master.css" }
+
+  %body
+    %header.branding
+      %h3.logo
+        %a{ :href => "/" } Show me the lyrics
+
+    .main-content
+      .intro
+        %p
+          Just enter the name of the artist and the song and we will search the lyrics for you.
+      .content
+        %form{ :action => "/", :method => "post", :class => "lyrics-search-form" }
+          %input{ :type => "text", :name => "artist", :placeholder => "Artist name" }
+          %input{ :type => "text", :name => "song", :placeholder => "Song name" }
+          %p
+            %input{ :type => "submit", :value => "Find me my lyrics" }
+
+    - if @song
+      .song
+        %h3.song-title= @song.title
+        %h4.song-author= @song.author
+        = @song.lines.join("<br />")
+    -else
+      .song
+        %h3 The song was not found, try again ...

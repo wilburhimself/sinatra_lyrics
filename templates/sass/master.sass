@@ -1,0 +1,72 @@
+@import url(reset.css)
+
+$base: #921
+
+@mixin container
+  margin: 0 auto
+  width: 50%
+  font-size: 1.4em
+
+body
+  background: #f0f0f0
+  line-height: 1.4
+  font:
+    size: 62.3%
+    family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+    weight: 300
+
+a
+  color: $base
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+
+.branding
+  @include container
+  background: $base
+  padding: 1em
+  border-radius: 0 0 6px 6px
+
+  a
+    color: #fff
+
+  .logo
+    font:
+      size: 1.4em
+      weight: bold
+
+.main-content
+  @include container
+  background: white
+
+  .intro
+    text-align: center
+    padding: 1em
+
+  .content
+    padding: 1em
+
+  .lyrics-search-form
+    input[type=text]
+      width: 46%
+      padding: 0.4em
+
+.song
+  @include container
+  text-align: center
+  margin-top: 2em
+  padding-top: 2em
+  font:
+    size: 1.4em
+
+  .song-title
+    font:
+      size: 2em
+      weight: bold
+
+  h4
+    font:
+      size: 1em
+      text-transform: uppercase
+      margin-bottom: 3em
