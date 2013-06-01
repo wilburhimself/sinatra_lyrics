@@ -18,6 +18,7 @@ class MyApp < Sinatra::Base
   # Configuration ++++++++++++++++++++++++++++++++++++++++++++++++++++
   set :public_dir, File.dirname(__FILE__) + '/public'
   set :views, File.dirname(__FILE__) + '/templates'
+  set :root, MyApp.root
 
   get '/' do
     haml :index
