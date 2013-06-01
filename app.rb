@@ -32,5 +32,5 @@ class MyApp < Sinatra::Base
 end
 
 if __FILE__ == $0
-  MyApp::run! :port => 4567
+  MyApp::run!
 end
