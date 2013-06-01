@@ -1,9 +1,7 @@
 require 'sinatra/base'
 require 'lyricfy'
-require 'slim'
 require 'sass'
 require 'haml'
-require 'RedCloth'
 
 class SassHandler < Sinatra::Base
   set :views, File.dirname(__FILE__) + '/templates/sass'
