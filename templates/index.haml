@@ -16,8 +16,8 @@
           Just enter the name of the artist and the song and we will search the lyrics for you.
       .content
         %form{ :action => "/", :method => "post", :class => "lyrics-search-form" }
-          %input{ :type => "text", :name => "artist", :placeholder => "Artist name" }
-          %input{ :type => "text", :name => "song", :placeholder => "Song name" }
+          %input{ :type => "text", :name => "artist", :placeholder => "Artist name", :class => ("missing" if @missing_artist), :value => (@input_artist if @input_artist) }
+          %input{ :type => "text", :name => "song", :placeholder => "Song name", :class => ("missing" if @missing_song), :value => (@input_song if @input_song) }
           %p
             %input{ :type => "submit", :value => "Find my lyrics" }
 
