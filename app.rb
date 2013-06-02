@@ -31,7 +31,7 @@ class MyApp < Sinatra::Base
 
     if !params[:artist].empty? and !params[:song].empty?
       @song    = fetcher.search params[:artist], params[:song]
-      @message = "No song was found."
+      @message = "No song was found." if !@song
     else
       @missing_artist = params[:artist].empty?
       @missing_song   = params[:song].empty?
