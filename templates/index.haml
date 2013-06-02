@@ -26,6 +26,6 @@
         %h3.song-title= @song.title
         %h4.song-author= @song.author
         = @song.lines.join("<br />")
-    -else
+    - if @message
       .song
-        %h3 The song was not found, try again ...
+        %h3= @message
