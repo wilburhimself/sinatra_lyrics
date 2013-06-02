@@ -26,7 +26,17 @@ class MyApp < Sinatra::Base
 
   post '/' do
     fetcher = Lyricfy::Fetcher.new
-    @song = fetcher.search params[:artist], params[:song]
+    @input_artist = params[:artist]
+    @input_song   = params[:song]
+
+    if !params[:artist].empty? and !params[:song].empty?
+      @song    = fetcher.search params[:artist], params[:song]
+      @message = "No song was found."
+    else
+      @missing_artist = params[:artist].empty?
+      @missing_song   = params[:song].empty?
+      @message        = "You have to enter the artist name and the song name."
+    end
 
     haml :index
   end
