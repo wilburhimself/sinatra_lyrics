@@ -42,6 +42,4 @@ class MyApp < Sinatra::Base
   end
 end
 
-if __FILE__ == $0
-  MyApp::run!
-end
+MyApp::run! if __FILE__ == $0
