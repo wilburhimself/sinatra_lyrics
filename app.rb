@@ -10,7 +10,6 @@ class SassHandler < Sinatra::Base
     filename = params[:splat].first
     sass filename.to_sym
   end
-
 end
 
 class MyApp < Sinatra::Base
